@@ -8,10 +8,11 @@ def main():
         lines = [line.rstrip() for line in file]
 
     split_lists: list[list[str]] = split_list(lines)
-    print(max(sum_list(split_lists)))
+    # part 1
+    print(f"Part 1: {max(sum_list(split_lists))} calories")
 
     # part 2
-    print(sum(sorted(sum_list(split_lists))[-3:]))
+    print(f"Part 2: {sum(sorted(sum_list(split_lists))[-3:])} calories")
 
 
 def split_list(l: list):
@@ -19,10 +20,7 @@ def split_list(l: list):
 
 
 def sum_list(l_2d: list[list[str]]):
-    totals = []
-    for l in l_2d:
-        totals.append(sum(map(int, l)))
-    return totals
+    return [sum(map(int, l)) for l in l_2d]
 
 
 if __name__ == "__main__":
