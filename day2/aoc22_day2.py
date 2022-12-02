@@ -31,13 +31,12 @@ def part1(game: list[str, str]):
 
 
 def part2(game: list[str, str]):
-    result_dict = {"X": 0, "Y": 3, "Z": 6}
     bonus_dict = {
         "X": ((ord(game[0]) - ord("A") - 1) % 3) + 1,
-        "Y": ord(game[0]) - ord("A") + 1,
-        "Z": ((ord(game[0]) - ord("A") + 1) % 3) + 1,
+        "Y": ord(game[0]) - ord("A") + 4,
+        "Z": ((ord(game[0]) - ord("A") + 1) % 3) + 7,
     }
-    return result_dict[game[1]] + bonus_dict[game[1]]
+    return bonus_dict[game[1]]
 
 
 if __name__ == "__main__":
